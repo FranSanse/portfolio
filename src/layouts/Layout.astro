@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import fondoFooter from '../assets/fondo_footer.jpg';
 import '../styles/global.css'; //Importación de Tailwind y estilos globales del sitio
 
 ---
@@ -36,8 +38,14 @@ import '../styles/global.css'; //Importación de Tailwind y estilos globales del
 
 
 	</head>
-	<body class="w-full min-h-screen ">
-		<slot />
+	<body class="min-h-screen bg-slate-950">
+		<div class="fixed inset-0 pointer-events-none -z-10  overflow-hidden bg-slate-950">
+			<Image src={fondoFooter} format="webp" quality={50} alt="" class="w-full h-full object-cover object-center blur-xl opacity-60 scale-110" />
+			<div class =" absolute inset-0 absolute bg-slate-950/50 mix-blend-multiply"/>
+    	</div>
+		<main class="relative w-full min-h-screen z-10">
+			<slot />
+		</main>
 	</body>
 </html>
 
