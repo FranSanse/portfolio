@@ -1,0 +1,122 @@
+<canvas id="canvas-network"></canvas>
+
+<style>
+    #canvas-network{
+        position:fixed;
+        top:0;
+        left:0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 0;
+        pointer-events:none;
+        background-color: transparent;
+    }
+</style>
+
+<script>
+    const canvas = document.getElementById("canvas-network") as HTMLCanvasElement;
+    const contexto = canvas.getContext("2d");
+    console.log('Contexto:', contexto);
+
+    if (contexto){
+        let particulas : Particula[] = [];
+        const distanciaMaxima = 110;
+        const numeroParticulas = 70;
+
+        const mouse = {
+            x : null as number | null,
+            y : null as number | null,
+            radio: 80
+        }
+
+        window.addEventListener('mousemove',(e) =>{
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        window.addEventListener('mouseleave',() =>{
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        const resize = () => {
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerHeight;
+        };
+
+        window.addEventListener('resize',resize);
+        resize();
+
+        class Particula{
+            x : number;
+            y : number;
+            vx : number;
+            vy : number;
+            radio : number;
+
+            constructor(){
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.8;
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.radio = Math.random() * 1,5 + 1;
+            }
+
+            actualizar(){
+                this.x += this.vx;
+                this.y += this.vy
+                if (this.x < 0 || this.x > canvas.width){
+                    this.vx = -this.vx;
+                }
+
+                if (this.y < 0 || this.y > canvas.height){
+                    this.vy = -this.vy;
+                }
+            }
+
+            dibujar(){
+                if(!contexto){
+                    return;
+                }
+                contexto.beginPath();
+                contexto.fillStyle = "#38bdf8";
+                contexto.arc(this.x,this.y,this.radio,0,Math.PI*2);
+                contexto.fill()
+            }
+        }
+
+        for(let i = 0; i < numeroParticulas; i++){
+            console.log('2.Creando las particulas');    
+            particulas.push(new Particula());
+        }
+
+        const animacion = () =>{
+            contexto.clearRect(0,0,canvas.width,canvas.height);
+            for(let i = 0; i < particulas.length; i++){
+                particulas[i].actualizar();
+                particulas[i].dibujar();
+                console.log('5.Actualizando y dibujando las particulas');
+
+                for(let j = i+1 ; j< particulas.length; j++){
+                    const dx = particulas[i].x - particulas[j].x;
+                    const dy = particulas[i].y - particulas[j].y;
+                    const distancia = Math.hypot(dx,dy);
+
+                    if (distancia < distanciaMaxima){
+                        const opacidad = 1 - (distancia/distanciaMaxima);
+                        contexto.strokeStyle = `rgba(56, 189, 248, ${opacidad * 0.25})`;
+                        contexto.lineWidth = 1;
+                        contexto.beginPath;
+                        contexto.moveTo(particulas[i].x,particulas[i].y);
+                        contexto.lineTo(particulas[j].x,particulas[j].y);
+                        contexto.stroke();
+                    }
+                }
+
+            }
+            requestAnimationFrame(animacion);
+        }
+        console.log('1.Antes de llamar a la funcion animacion');
+        animacion();
+    }
+</script>
