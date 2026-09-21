@@ -3,27 +3,39 @@ import '../styles/global.css';
 import '@fontsource/bodoni-moda';
 import '@fontsource/instrument-serif';
 import '@fontsource/playfair-display';
+import { useTranslations } from '../i18n/ui';
+
+const ruta = Astro.url.pathname;
+
+const esIngles = ruta.startsWith('/en');
+
+const t = useTranslations(ruta);
+
+const etiquetaMostrar = esIngles ? 'ES' : 'EN';
+
+const archivoDescarga = esIngles ? '/CV_ingles.pdf' : '/CV.pdf';
+
+const rutaMostrar = esIngles ? '/' : '/en';
 ---
 
 <header class="fixed grid grid-cols-2 xl:grid-cols-3 top-0 left-0 right-0 z-50 bg-slate-950/70 w-full items-center backdrop-blur-xs px-6 xl:px-12 py-4 gap-y-4">
       
         <div class="gap-1 justify-self-start flex flex-col order-1">
             <h1 class="text-white text-2xl uppercase font-bold font-space-mono drop-shadow-[0_0_12px_rgba(56,189,248,0.6)] leading-tight">Francisco Iván <br/> San Segundo Álvarez</h1>
-            <h2 class="text-zinc-400 text-base uppercase tracking-widest font-bold font-space-mono">Ingenierio informático</h2>
+            <h2 class="text-zinc-400 text-base uppercase tracking-widest font-bold font-space-mono">{t('role')}</h2>
         </div>
         
         <div class="flex justify-self-end items-center gap-3 sm:gap-6 order-2 xl:order-3">
-            <button class="text-zinc-400 font-mono text-lg cursor-pointer hover:text-white rounded px-2 py-1 transition-colors">EN</button>
-            <a href="/cv.pdf" download="CV_Francisco_Ivan_San_Segundo_Alvarez" class="text-slate-100 font-mono text-lg cursor-pointer uppercase bg-blue-500/80 px-3.5 py-1.5 rounded-[14px] hover:bg-blue-300/80 border border-sky-300/40 hover:border-white shadow-sm  hover:shadow-[0_0_12px_rgba(147,197,253,0.6)] transition-all duration-200">DESCARGAR CV</a>
+            <a href={rutaMostrar} class="text-zinc-400 font-mono text-lg cursor-pointer hover:text-white rounded px-2 py-1 transition-colors">{etiquetaMostrar}</a>
+            <a href={archivoDescarga} download="CV_Francisco_Ivan_San_Segundo_Alvarez.pdf" class="text-slate-100 font-mono text-lg cursor-pointer uppercase bg-blue-500/80 px-3.5 py-1.5 rounded-[14px] hover:bg-blue-300/80 border border-sky-300/40 hover:border-white shadow-sm  hover:shadow-[0_0_12px_rgba(147,197,253,0.6)] transition-all duration-200">{t('btn.cv')}</a>
         </div>
 
         <nav class="justify-self-center items-center col-span-2 xl:col-span-1 flex flex-row gap-4 order-3 xl:order-2">
-            <a href="#inicio" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">Inicio</a>
-            <a href="#sobre-mi" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">Sobre mí</a>
-            <a href="#experiencia" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">Experiencia</a>
-            <a href="#proyectos" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">Proyectos</a>
-            <a href="#stack" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">Stack tecnológico</a>
-            <a href="#contacto" class="whitespace-nowrap relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">Contacto</a>
+            <a href="#inicio" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">{t('home')}</a>
+            <a href="#sobre-mi" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">{t('about')}</a>
+            <a href="#experiencia" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">{t('experience')}</a>
+            <a href="#proyectos" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">{t('projects')}</a>
+            <a href="#stack" class="relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">{t('stack')}</a>
+            <a href="#contacto" class="whitespace-nowrap relative text-zinc-300 text-base xl:text-lg cursor-pointer hover:text-white transition-colors pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-500">{t('contact')}</a>
         </nav>
 </header>
-

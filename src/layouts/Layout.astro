@@ -4,41 +4,51 @@ import fondoFooter from '../assets/fondo_footer.jpg';
 import '../styles/global.css'; //Importación de Tailwind y estilos globales del sitio
 import CursorGlow from '../components/CursorGlow.astro';
 import NetworkBackground  from '../components/NetworkBackground.astro';
+import { useTranslations } from '../i18n/ui';
+
+const ruta = Astro.url.pathname;
+
+const esIngles = ruta.startsWith('/en');
+
+const currentLang = esIngles ? 'en' : 'es';
+
+const t = useTranslations(ruta);
+
+const siteUrl = 'https://fransanse.vercel.app';
+
+const currentUrl = `${siteUrl}${ruta}`;
 
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth"> <!-- Desplazamiento suave para la navegación interna -->
+<html lang={currentLang} class="scroll-smooth"> <!-- Desplazamiento suave para la navegación interna -->
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon_negro.png" media="(prefers-color-scheme:light)" />
 		<link rel="icon" type="image/svg+xml" href="/favicon_blanco.png" media="(prefers-color-scheme:dark)"/>
-		<link rel="canonical" href="[https://fransanse.vercel.app/](https://fransanse.vercel.app/)" />
+		<link rel="canonical" href={currentUrl} />
 
-		<title>Francisco Iván San Segundo Álvarez | Software Engineer & Web Developer</title>
+		<title>{t('meta.title')}</title>
 
-		<meta name= "description" content="Portfolio de Francisco Iván San Segundo Álvarez. Ingeniero Informático enfocado en el desarrollo de software, ciberseguridad e infraestructura de sistemas." />
+		<meta name= "description" content={t('meta.description')} />
 		<meta name="author" content="Francisco Iván San Segundo Álvarez"/>
 
 
 		<!-- Open Graph: Vista previa para redes sociales y mensajería (Whatsapp, Linkedin,etc) -->
 		<meta property="og:type" content="website"/>
-		<meta property="og:title" content="Francisco Iván San Segundo Álvarez | Software Engineer & Web Developer"/>
-		<meta property="og:description" content="Portfolio de Francisco Iván San Segundo Álvarez. Ingeniero Informático enfocado en el desarrollo de software, ciberseguridad e infraestructura de sistemas."/>
-		<meta property="og:url" content="https://fransanse.vercel.app/"/>
-		<meta property="og:image" content="https://fransanse.vercel.app/og_image.png"/>
+		<meta property="og:title" content={t('meta.title')}/>
+		<meta property="og:description" content={t('meta.description')}/>
+		<meta property="og:url" content={currentUrl}/>
+		<meta property="og:image" content={`${siteUrl}/og_image.png`}/>
 
 		<!-- X: Vista previa para X -->
 		<meta name="twitter:card" content="summary_large_image"/>
-		<meta name="twitter:title" content="Francisco Iván San Segundo Álvarez | Software Engineer & Web Developer"/>
-		<meta name="twitter:description" content="Portfolio de Francisco Iván San Segundo Álvarez. Ingeniero Informático enfocado en el desarrollo de software, ciberseguridad e infraestructura de sistemas."/>
-		<meta name="twitter:url" content="https://fransanse.vercel.app/"/>
-		<meta name="twitter:image" content="https://fransanse.vercel.app/og_image.png"/>
-
-
-
+		<meta name="twitter:title" content={t('meta.title')}/>
+		<meta name="twitter:description" content={t('meta.description')}/>
+		<meta name="twitter:url" content={currentUrl}/>
+		<meta name="twitter:image" content={`${siteUrl}/og_image.png`}/>
 
 	</head>
 	<body class="min-h-screen bg-slate-950">
