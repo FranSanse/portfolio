@@ -17,6 +17,7 @@ export const ui = {
         'projects': 'Proyectos',
         'stack': 'Stack tecnológico',
         'contact': 'Contacto',
+        'menu.toggle': 'Abrir o cerrar menú',
     },
     en:{
         'meta.title':'Francisco Iván San Segundo Álvarez | Software Engineer & Web Developer' ,
@@ -29,6 +30,7 @@ export const ui = {
         'projects': 'Projects',
         'stack': 'Tech Stack',
         'contact': 'Contact',
+        'menu.toggle': 'Toggle navigation menu',
     
     }, 
 } as const;
