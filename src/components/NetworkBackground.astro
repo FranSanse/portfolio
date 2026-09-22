@@ -20,8 +20,11 @@
 
     if (contexto){
         let particulas : Particula[] = [];
-        const distanciaMaxima = 110;
-        const numeroParticulas = 70;
+
+        const esMovil = window.innerWidth < 768;
+
+        const distanciaMaxima = esMovil ? 95 : 130;
+        const numeroParticulas = esMovil ? 45 : 90;
 
         const mouse = {
             x : null as number | null,
