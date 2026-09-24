@@ -1,8 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import fondoFooter from '../assets/fondo_footer.jpg';
 import '../styles/global.css'; //Importación de Tailwind y estilos globales del sitio
-import CursorGlow from '../components/CursorGlow.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import NetworkBackground  from '../components/NetworkBackground.astro';
 import { useTranslations } from '../i18n/ui';
 
@@ -17,6 +16,9 @@ const t = useTranslations(ruta);
 const siteUrl = 'https://fransanse.vercel.app';
 
 const currentUrl = `${siteUrl}${ruta}`;
+
+
+const rutaImagen = esIngles ? 'og_image_en.png' : 'og_image.png'
 
 ---
 
@@ -41,7 +43,7 @@ const currentUrl = `${siteUrl}${ruta}`;
 		<meta property="og:title" content={t('meta.title')}/>
 		<meta property="og:description" content={t('meta.description')}/>
 		<meta property="og:url" content={currentUrl}/>
-		<meta property="og:image" content={`${siteUrl}/og_image.png`}/>
+		<meta property="og:image" content={`${siteUrl}/${rutaImagen}`}/>
 
 		<!-- X: Vista previa para X -->
 		<meta name="twitter:card" content="summary_large_image"/>
@@ -57,9 +59,11 @@ const currentUrl = `${siteUrl}${ruta}`;
 			<!-- <Image src={fondoFooter} format="webp" quality={50} alt="" class="w-full h-full object-cover object-center blur-xl opacity-60 scale-110" /> -->
 			<div class =" absolute inset-0 absolute bg-slate-950/50 mix-blend-multiply"/>
     	</div>
-		<main class="relative w-full grow flex flex-col z-10">
+		<Header />
+		<main class="relative w-full grow flex flex-col z-10 pt-28 sm:pt-36">
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>
 
