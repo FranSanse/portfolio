@@ -82,10 +82,19 @@ const rutaMostrar = esIngles ? '/' : '/en';
     const iconBurger = document.getElementById('icon-burger');
     const iconClose = document.getElementById('icon-cross');
     const menu = document.getElementById('menu');
+    const menuLinks = menu?.querySelectorAll('a');
 
     menuToggle?.addEventListener('click',() => {
         iconBurger?.classList.toggle('hidden');
         iconClose?.classList.toggle('hidden');
         menu?.classList.toggle('hidden');
+    });
+
+    menuLinks?.forEach((link) =>{
+        link.addEventListener('click',() =>{
+            iconBurger?.classList.toggle('hidden');
+            iconClose?.classList.toggle('hidden');
+            menu?.classList.toggle('hidden');
+        })
     });
 </script>

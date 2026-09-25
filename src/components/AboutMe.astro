@@ -44,11 +44,11 @@ const estadoLibre = true;
                 <div class="flex flex-col items-center sm:items-start px-5 gap-3">
                     <span class="text-white text-2xl sm:text-3xl font-bold tracking-wide">Francisco Iván San Segundo</span>
                     <div class={`inline-flex items-center gap-2 px-3 py-1 rounded-full w-fit border text-xs sm:text-sm font-mono ${estadoLibre ? 'bg-emerald-950/40 border-emerald-500/40 text-emerald-400': 'bg-red-950/40 border-red-500/40 text-red-400' }`}>
-                        <span class={`w-1.5 h-1.5 rounded-full inline-block ${estadoLibre ? 'bg-emerald-400' : 'bg-red-400'}`}></span>
+                        <span class={`w-1.5 h-1.5 rounded-full inline-block shrink-0 ${estadoLibre ? 'bg-emerald-400' : 'bg-red-400'}`}></span>
                         <span class="text-xs">📍</span>
                         <span class={`${estadoLibre ? 'text-green-500/90' : 'text-red-500/90'}`}>Palencia, España</span>
                         <span class="opacity-60">•</span>
-                        <span class={`${estadoLibre ? 'text-green-500/90' : 'text-red-500/90'} ml-2`}>{estadoLibre ? 'Disponible' : 'Ocupado'}</span>
+                        <span class={`${estadoLibre ? 'text-green-500/90' : 'text-red-500/90'} ml-2`}>{estadoLibre ? t('estado.disponible') : t('estado.ocupado')}</span>
                     </div>
                 </div>
             </div>
