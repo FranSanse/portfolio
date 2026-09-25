@@ -21,6 +21,7 @@ export const ui = {
         'text.copyright': '© 2026 Francisco Iván San Segundo. Todos los derechos reservados.',
         'texto.sobremi.p1':'Soy graduado en Ingeniería Informática por la Universidad de Valladolid. Concibo el desarrollo de software estrechamente ligado a los entornos donde opera: no solo diseño aplicaciones robustas, sino que presto la misma atención a los sistemas, la infraestructura y la seguridad desde la primera línea de código.',
         'texto.sobremi.p2':'Mi paso por NTT Data en entornos de virtualización, TelcoCloud y observabilidad SRE reforzó mi visión hacia el paradigma NetDevOps. Fruto de este enfoque nace S2 Orchestrator, una plataforma Full-Stack de orquestación y monitorización de redes virtuales desarrollada como Trabajo Fin de Grado, cuyos detalles técnicos puedes consultar en la sección de proyectos.',
+        'titulo.sobremi': 'SOBRE MÍ'
 
     },
     en:{
@@ -37,7 +38,8 @@ export const ui = {
         'menu.toggle': 'Toggle navigation menu',
         'text.copyright': '© 2026 Francisco Iván San Segundo. All rights reserved.',
         'texto.sobremi.p1':'I hold a degree in Computer Engineering from the University of Valladolid. I view software development as closely tied to the underlying infrastructure: I focus on building robust applications while giving equal importance to systems, runtime stability, and security by design.',
-        'texto.sobremi.p2':'My experience at NTT Data within virtualization, TelcoCloud, and SRE observability solidified my commitment to NetDevOps principles. This background led to the creation of S2 Orchestrator, a Full-Stack virtual network orchestration and telemetry platform built as my final degree project, which is detailed further in the projects section.'
+        'texto.sobremi.p2':'My experience at NTT Data within virtualization, TelcoCloud, and SRE observability solidified my commitment to NetDevOps principles. This background led to the creation of S2 Orchestrator, a Full-Stack virtual network orchestration and telemetry platform built as my final degree project, which is detailed further in the projects section.',
+        'titulo.sobremi': 'ABOUT ME'
         
     
     }, 
