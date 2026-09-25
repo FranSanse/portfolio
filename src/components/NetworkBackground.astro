@@ -16,35 +16,22 @@
 <script>
     const canvas = document.getElementById("canvas-network") as HTMLCanvasElement;
     const contexto = canvas.getContext("2d");
-    console.log('Contexto:', contexto);
 
     if (contexto){
         let particulas : Particula[] = [];
 
-        const esMovil = window.innerWidth < 768;
+        const ancho = window.innerWidth;
+        const alto = window.innerHeight;
 
-        const distanciaMaxima = esMovil ? 95 : 130;
-        const numeroParticulas = esMovil ? 40 : 90;
+        const area = ancho * alto;
 
-        const mouse = {
-            x : null as number | null,
-            y : null as number | null,
-            radio: 80
-        }
-
-        window.addEventListener('mousemove',(e) =>{
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
-        });
-
-        window.addEventListener('mouseleave',() =>{
-            mouse.x = null;
-            mouse.y = null;
-        });
+        const distanciaMaxima = Math.min(Math.floor(ancho*0.05+110),185);
+        const distanciaMaximaCuadrado = distanciaMaxima * distanciaMaxima;
+        const numeroParticulas = Math.min(Math.floor(area/11000),180);
 
         const resize = () => {
             canvas.height = window.innerHeight;
-            canvas.width = window.innerHeight;
+            canvas.width = window.innerWidth;
         };
 
         window.addEventListener('resize',resize);
@@ -62,7 +49,7 @@
                 this.y = Math.random() * canvas.height;
                 this.vx = (Math.random() - 0.5) * 0.5;
                 this.vy = (Math.random() - 0.5) * 0.5;
-                this.radio = Math.random() * 1,5 + 1;
+                this.radio = Math.random() * 1.5 + 1;
             }
 
             actualizar(){
@@ -76,50 +63,43 @@
                     this.vy = -this.vy;
                 }
             }
-
-            dibujar(){
-                if(!contexto){
-                    return;
-                }
-                contexto.beginPath();
-                contexto.fillStyle = "#38bdf8";
-                contexto.arc(this.x,this.y,this.radio,0,Math.PI*2);
-                contexto.fill()
-            }
         }
 
-        for(let i = 0; i < numeroParticulas; i++){
-            console.log('2.Creando las particulas');    
+        for(let i = 0; i < numeroParticulas; i++){   
             particulas.push(new Particula());
         }
 
         const animacion = () =>{
             contexto.clearRect(0,0,canvas.width,canvas.height);
+            contexto.fillStyle = "#38bdf8";
+            contexto.beginPath();
             for(let i = 0; i < particulas.length; i++){
-                particulas[i].actualizar();
-                particulas[i].dibujar();
-                console.log('5.Actualizando y dibujando las particulas');
+                const p = particulas[i];
+                p.actualizar();
+                contexto.moveTo(p.x+p.radio,p.y);
+                contexto.arc(p.x,p.y,p.radio,0,Math.PI*2);
+            }
+            contexto.fill();
 
+            for(let i = 0; i < particulas.length; i++){
                 for(let j = i+1 ; j< particulas.length; j++){
                     const dx = particulas[i].x - particulas[j].x;
                     const dy = particulas[i].y - particulas[j].y;
-                    const distancia = Math.hypot(dx,dy);
+                    const distanciaCuadrado = dx*dx + dy*dy;
 
-                    if (distancia < distanciaMaxima){
-                        const opacidad = 1 - (distancia/distanciaMaxima);
+                    if (distanciaCuadrado < distanciaMaximaCuadrado){
+                        const opacidad = (1 - (Math.sqrt(distanciaCuadrado)/distanciaMaxima));
                         contexto.strokeStyle = `rgba(56, 189, 248, ${opacidad * 0.25})`;
                         contexto.lineWidth = 1;
-                        contexto.beginPath;
+                        contexto.beginPath();
                         contexto.moveTo(particulas[i].x,particulas[i].y);
                         contexto.lineTo(particulas[j].x,particulas[j].y);
                         contexto.stroke();
                     }
                 }
-
             }
             requestAnimationFrame(animacion);
         }
-        console.log('1.Antes de llamar a la funcion animacion');
         animacion();
     }
 </script>

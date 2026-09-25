@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+import {useTranslations} from '../i18n/ui.ts';
+import foto from '../assets/foto_calidad.jpg';
+import {Image} from 'astro:assets';
+
+const ruta = Astro.url.pathname;
+
+const esIngles = ruta.startsWith('/en');
+
+const t = useTranslations(ruta);
+
+const estadoLibre = true;
+
+
+---
+
+<div id="sobre-mi" class="flex flex-col items-center pt-20 scroll-mt-36 px-4 md:px-8 max-w-7xl mx-auto w-full pb-20">
+    <h1 class="text-white font-[Unbounded] font-bold text-3xl md:text-4xl">{t('titulo.sobremi')}</h1>
+    <div class="w-full h-auto pb-10 bg-zinc-900/90 backdrop-blur-md border border-cyan-500/20 rounded-xl mt-12">
+        <div class="relative flex flex-row items-center justify-between w-full py-3 bg-zinc-800/80 border-b border-cyan-500/20 rounded-t-xl">
+            <div class="flex px-5 gap-3">
+                <span class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-yellow-500/80 inline-block"></span>
+                <span class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-green-500/80 inline-block"></span>
+            </div>
+            <span class="whitespace-nowrap absolute left-[55%] sm:left-1/2 -translate-x-1/2 font-['JetBrains_Mono',monospace] text-zinc-300 text-sm sm:text-xl">bash - fransanse@portfolio</span>
+        </div>
+        <div class="flex flex-row w-full px-5 py-5">
+            <p class="font-mono text-base">
+                <span class="text-green-500 font-bold">&gt;</span>
+                <span class="text-cyan-400 font-bold ml-5">fransanse@portfolio</span>
+                <span class="text-gray-500 font-bold">:</span>
+                <span class="text-orange-500 font-bold">~</span>
+                <span class="text-gray-500 font-bold">$</span>
+                <span class="text-white ml-2">whoami</span>
+            </p>
+        </div>
+        <div class="px-5">
+            <div class="flex flex-col items-center sm:flex-row w-full gap-6 p-4 bg-zinc-800/80 border border-cyan-500/20 rounded-xl">
+                <div class="h-[150px] w-[150px] rounded-xl overflow-hidden shrink-0 items-center">
+                    <Image src={foto} alt={t('meta.title')} class="h-full w-full object-cover"></Image>
+                </div>
+                <div class="flex flex-col items-center sm:items-start px-5 gap-3">
+                    <span class="text-white text-2xl sm:text-3xl font-bold tracking-wide">Francisco Iván San Segundo</span>
+                    <div class={`inline-flex items-center gap-2 px-3 py-1 rounded-full w-fit border text-xs sm:text-sm font-mono ${estadoLibre ? 'bg-emerald-950/40 border-emerald-500/40 text-emerald-400': 'bg-red-950/40 border-red-500/40 text-red-400' }`}>
+                        <span class={`w-1.5 h-1.5 rounded-full inline-block ${estadoLibre ? 'bg-emerald-400' : 'bg-red-400'}`}></span>
+                        <span class="text-xs">📍</span>
+                        <span class={`${estadoLibre ? 'text-green-500/90' : 'text-red-500/90'}`}>Palencia, España</span>
+                        <span class="opacity-60">•</span>
+                        <span class={`${estadoLibre ? 'text-green-500/90' : 'text-red-500/90'} ml-2`}>{estadoLibre ? 'Disponible' : 'Ocupado'}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-row w-full px-5 pt-10">
+            <p class="font-mono text-base">
+                <span class="text-green-500 font-bold">&gt;</span>
+                <span class="text-cyan-400 font-bold ml-5">fransanse@portfolio</span>
+                <span class="text-gray-500 font-bold">:</span>
+                <span class="text-orange-500 font-bold">~</span>
+                <span class="text-gray-500 font-bold">$</span>
+                <span class="text-white ml-2">cat about_me.txt</span>
+            </p>
+        </div>
+        <div class="ml-5 mt-4 border-l-2 border-cyan-400/60 space-y-4 pl-4 sm:pl-5 text-base sm:text-lg font-mono text-zinc-300 leading-relaxed">
+            <p>{t('texto.sobremi.p1')}</p>
+            <p>{t('texto.sobremi.p2')}</p>
+        </div>
+        <div class="flex flex-row w-full px-5 pt-10">
+            <p class="flex items-center font-mono text-base">
+                <span class="text-green-500 font-bold">&gt;</span>
+                <span class="text-cyan-400 font-bold ml-5">fransanse@portfolio</span>
+                <span class="text-gray-500 font-bold">:</span>
+                <span class="text-orange-500 font-bold">~</span>
+                <span class="text-gray-500 font-bold">$</span>
+                <span class="animate-[blink_1s_steps(1)_infinite] w-2 h-4 bg-green-500 inline-block ml-2"></span>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    @keyframes blink{
+        0,100% {opacity: 1;}
+        50% {opacity: 0;}
+    }
+</style>
