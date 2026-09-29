@@ -26,132 +26,265 @@ const t = useTranslations(ruta);
 
 ---
 
-<div id="stack" class="flex flex-col items-center w-full py-28 mx-auto scroll-mt-36 max-w-7xl px-4 md:px-8 pb-[500px]">
+<div id="stack" class="flex flex-col items-center w-full py-28 mx-auto scroll-mt-36 px-4 md:px-8 pb-[500px]">
     <h1 class="text-white text-bold font-[Unbounded] uppercase text-2xl md:text-4xl ">{t('title.stack')}</h1>
-    <div class="flex flex-row w-full overflow-hidden pt-8 md:pt-12 gap-8 md:gap-16">
-        <ul class="flex flex-row gap-8 md:gap-16 shrink-0 p-0">
+    <div class="flex flex-row w-full overflow-hidden pt-8 md:pt-12 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+        <ul class="flex flex-row gap-8 md:gap-16 shrink-0 pr-8 md:pr-16 animate-[marquee_45s_linear_infinite]">
             <li class="flex flex-row gap-3 items-center shrink-0">
                 <BashIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></BashIcon>
-                <p class="uppercase text-white text-sm md:text_base">Bash</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Bash</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <DockerIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></DockerIcon>
-                <p class="uppercase text-white text-sm md:text_base">Docker</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Docker</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <GitIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></GitIcon>
-                <p class="uppercase text-white text-sm md:text_base">Git</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Git</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <GrafanaIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></GrafanaIcon>
-                <p class="uppercase text-white text-sm md:text_base">Grafana</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Grafana</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <LinuxIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></LinuxIcon>
-                <p class="uppercase text-white text-sm md:text_base">Linux</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Linux</p>
             </li> 
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <RedHatIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></RedHatIcon>
-                <p class="uppercase text-white text-sm md:text_base">Red Hat</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Red Hat</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <WiresharkIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></WiresharkIcon>
-                <p class="uppercase text-white text-sm md:text_base">Wireshark</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Wireshark</p>
+            </li>
+            <li class="flex flex-row gap-3 items-center shrink-0">
+                <BashIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></BashIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Bash</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <DockerIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></DockerIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Docker</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <GitIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></GitIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Git</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <GrafanaIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></GrafanaIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Grafana</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <LinuxIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></LinuxIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Linux</p>
+            </li> 
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <RedHatIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></RedHatIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Red Hat</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <WiresharkIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></WiresharkIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Wireshark</p>
             </li>
         </ul>
 
-        <ul class="flex flex-row gap-8 md:gap-16 shrink-0 p-0" aria-hidden="true">
+        <ul class="flex flex-row gap-8 md:gap-16 shrink-0 pr-8 md:pr-16 animate-[marquee_45s_linear_infinite]" aria-hidden="true">
             <li class="flex flex-row gap-3 items-center shrink-0">
                 <BashIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></BashIcon>
-                <p class="uppercase text-white text-sm md:text_base">Bash</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Bash</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <DockerIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></DockerIcon>
-                <p class="uppercase text-white text-sm md:text_base">Docker</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Docker</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <GitIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></GitIcon>
-                <p class="uppercase text-white text-sm md:text_base">Git</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Git</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <GrafanaIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></GrafanaIcon>
-                <p class="uppercase text-white text-sm md:text_base">Grafana</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Grafana</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <LinuxIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></LinuxIcon>
-                <p class="uppercase text-white text-sm md:text_base">Linux</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Linux</p>
             </li> 
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <RedHatIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></RedHatIcon>
-                <p class="uppercase text-white text-sm md:text_base">Red Hat</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Red Hat</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <WiresharkIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></WiresharkIcon>
-                <p class="uppercase text-white text-sm md:text_base">Wireshark</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Wireshark</p>
+            </li>
+            <li class="flex flex-row gap-3 items-center shrink-0">
+                <BashIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></BashIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Bash</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <DockerIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></DockerIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Docker</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <GitIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></GitIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Git</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <GrafanaIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></GrafanaIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Grafana</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <LinuxIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></LinuxIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Linux</p>
+            </li> 
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <RedHatIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></RedHatIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Red Hat</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <WiresharkIcon class="w-10 h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></WiresharkIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Wireshark</p>
             </li>
         </ul>
     </div>
-    <div class="flex flex-row w-full overflow-hidden pt-6 md:pt-8 gap-8 md:gap-16">
-        <ul class="flex flex-row gap-8 md:gap-16 shrink-0 p-0">
+    <div class="flex flex-row w-full overflow-hidden pt-6 md:pt-8 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+        <ul class="flex flex-row gap-8 md:gap-16 shrink-0 pr-8 md:pr-16 animate-[marquee-reverse_45s_linear_infinite]">
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <AstroIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></AstroIcon>
-                <p class="uppercase text-white text-sm md:text_base">Astro</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Astro</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <CIcon class="w-6 h-6 md:w-8 md:h-8 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></CIcon>
-                <p class="uppercase text-white text-sm md:text_base">C</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">C</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <JavaIcon class="w-9 h-9 md:w-11 md:h-11 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></JavaIcon>
-                <p class="uppercase text-white text-sm md:text_base">Java</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Java</p>
             </li>
             <li class="flex flex-row gap-3 items-center shrink-0">
                 <MySQLIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-110"></MySQLIcon>
-                <p class="uppercase text-white text-sm md:text_base">MySQL</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">MySQL</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <PythonIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></PythonIcon>
-                <p class="uppercase text-white text-sm md:text_base">Python</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Python</p>
             </li>
                 <li class="flex flex-row gap-2 items-center shrink-0">
                 <TailwindCSSIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></TailwindCSSIcon>
-                <p class="uppercase text-white text-sm md:text_base">Tailwind CSS</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Tailwind CSS</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <TypeScriptIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></TypeScriptIcon>
-                <p class="uppercase text-white text-sm md:text_base">TypeScript</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">TypeScript</p>
             </li>
-        </ul>
-
-        <ul class="flex flex-row gap-8 md:gap-16 shrink-0 p-0" aria-hidden="true">
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <AstroIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></AstroIcon>
-                <p class="uppercase text-white text-sm md:text_base">Astro</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Astro</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <CIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></CIcon>
-                <p class="uppercase text-white text-sm md:text_base">C</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">C</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <JavaIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></JavaIcon>
-                <p class="uppercase text-white text-sm md:text_base">Java</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Java</p>
             </li>
             <li class="flex flex-row gap-3 items-center shrink-0">
                 <MySQLIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></MySQLIcon>
-                <p class="uppercase text-white text-sm md:text_base">MySQL</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">MySQL</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <PythonIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></PythonIcon>
-                <p class="uppercase text-white text-sm md:text_base">Python</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Python</p>
             </li>
                 <li class="flex flex-row gap-2 items-center shrink-0">
                 <TailwindCSSIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></TailwindCSSIcon>
-                <p class="uppercase text-white text-sm md:text_base">Tailwind CSS</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Tailwind CSS</p>
             </li>
             <li class="flex flex-row gap-2 items-center shrink-0">
                 <TypeScriptIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></TypeScriptIcon>
-                <p class="uppercase text-white text-sm md:text_base">TypeScript</p>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">TypeScript</p>
+            </li>
+        </ul>
+
+        <ul class="flex flex-row gap-8 md:gap-16 shrink-0 pr-8 md:pr-16 animate-[marquee-reverse_45s_linear_infinite]" aria-hidden="true">
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <AstroIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></AstroIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Astro</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <CIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></CIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">C</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <JavaIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></JavaIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Java</p>
+            </li>
+            <li class="flex flex-row gap-3 items-center shrink-0">
+                <MySQLIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></MySQLIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">MySQL</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <PythonIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></PythonIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Python</p>
+            </li>
+                <li class="flex flex-row gap-2 items-center shrink-0">
+                <TailwindCSSIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></TailwindCSSIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Tailwind CSS</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <TypeScriptIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></TypeScriptIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">TypeScript</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <AstroIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></AstroIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Astro</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <CIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></CIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">C</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <JavaIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></JavaIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Java</p>
+            </li>
+            <li class="flex flex-row gap-3 items-center shrink-0">
+                <MySQLIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></MySQLIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">MySQL</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <PythonIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></PythonIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Python</p>
+            </li>
+                <li class="flex flex-row gap-2 items-center shrink-0">
+                <TailwindCSSIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></TailwindCSSIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">Tailwind CSS</p>
+            </li>
+            <li class="flex flex-row gap-2 items-center shrink-0">
+                <TypeScriptIcon class="w-8 h-8 md:w-10 md:h-10 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 hover:scale-110"></TypeScriptIcon>
+                <p class="uppercase font-['Space_Grotesk'] text-white text-sm md:text-base">TypeScript</p>
             </li>
         </ul>
     </div>
 </div>
+
+
+<style is:global>
+    @keyframes marquee{
+       0%{
+        transform: translateX(0);
+       } 
+       100%{
+        transform: translateX(-100%);
+       } 
+    }
+
+    @keyframes marquee-reverse{
+       0%{
+        transform: translateX(-100%);
+       } 
+       100%{
+        transform: translateX(0);
+       } 
+    }
+</style>
