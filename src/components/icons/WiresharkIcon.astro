@@ -1,0 +1,27 @@
+---
+
+const {class: className="w-8 h-8"} = Astro.props;
+
+---
+
+
+<svg class={className} viewBox="0 0 256 256" fill="currentColor">
+    <defs>
+        <linearGradient id="wireshark-fin" x1="128" y1="36" x2="128" y2="188" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#1881C2" />
+        <stop offset="100%" stop-color="#0E5482" />
+        </linearGradient>
+        <linearGradient id="wireshark-wave" x1="16" y1="180" x2="240" y2="212" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#00A3E0" />
+        <stop offset="100%" stop-color="#1881C2" />
+        </linearGradient>
+  </defs>
+  <path 
+    d="M68 184 C68 184 92 64 176 52 C150 102 140 134 130 184 Z" 
+    fill="url(#wireshark-fin)"
+  />
+  <path 
+    d="M32 184 C76 184 98 196 130 196 C162 196 184 174 228 174 C206 206 152 212 126 212 C82 212 54 200 32 184 Z" 
+    fill="url(#wireshark-wave)"
+  />
+</svg>
