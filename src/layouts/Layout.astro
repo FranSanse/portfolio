@@ -32,7 +32,7 @@ const rutaImagen = esIngles ? 'og_image_en.png' : 'og_image.png'
 ---
 
 <!doctype html>
-<html lang={currentLang} class="scroll-smooth"> <!-- Desplazamiento suave para la navegación interna -->
+<html lang={currentLang} class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -47,14 +47,12 @@ const rutaImagen = esIngles ? 'og_image_en.png' : 'og_image.png'
 		<meta name="author" content="Francisco Iván San Segundo Álvarez"/>
 
 
-		<!-- Open Graph: Vista previa para redes sociales y mensajería (Whatsapp, Linkedin,etc) -->
 		<meta property="og:type" content="website"/>
 		<meta property="og:title" content={t('meta.title')}/>
 		<meta property="og:description" content={t('meta.description')}/>
 		<meta property="og:url" content={currentUrl}/>
 		<meta property="og:image" content={`${siteUrl}/${rutaImagen}`}/>
 
-		<!-- X: Vista previa para X -->
 		<meta name="twitter:card" content="summary_large_image"/>
 		<meta name="twitter:title" content={t('meta.title')}/>
 		<meta name="twitter:description" content={t('meta.description')}/>
@@ -65,7 +63,6 @@ const rutaImagen = esIngles ? 'og_image_en.png' : 'og_image.png'
 	<body class="min-h-screen flex flex-col bg-slate-950">
 		<NetworkBackground/>
 		<div class="fixed inset-0 pointer-events-none -z-10  overflow-hidden bg-slate-900">
-			<!-- <Image src={fondoFooter} format="webp" quality={50} alt="" class="w-full h-full object-cover object-center blur-xl opacity-60 scale-110" /> -->
 			<div class =" absolute inset-0 absolute bg-slate-950/50 mix-blend-multiply"/>
     	</div>
 		<Header />
