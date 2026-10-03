@@ -1,0 +1,16 @@
+[
+    {
+        "duracion": "Feb 2026 - Jun 2026",
+        "rol": "Cloud & Infrastructure Engineer Intern",
+        "empresa": "NTT DATA Spain",
+        "localizacion": "Valladolid, Spain",
+        "descripcion": [
+            "Researched, deployed, and validated virtualization clusters using Microsoft SCVMM and Hyper-V for the Center of Excellence (COE).",
+            "Analyzed Cloud-Native architectures (Red Hat OpenShift, Kubernetes) and Telco cloud infrastructure with OpenStack.",
+            "Conducted Root Cause Analysis (RCA) on critical production incidents following SRE methodologies across compute nodes and storage volumes."
+        ],
+        "stack":["OpenShift", "OpenStack","SCVMM","Hyper-V","Kubernetes","GitOps","Linux"]
+    }
+]
+
+

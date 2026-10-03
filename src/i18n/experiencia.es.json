@@ -1,0 +1,14 @@
+[
+    {
+        "duracion": "Feb 2026 - Jun 2026",
+        "rol": "Ingeniero de Infraestructura y Cloud en Prácticas",
+        "empresa": "NTT DATA Spain",
+        "localizacion": "Valladolid, España",
+        "descripcion": [
+            "Investigación, despliegue y validación de clústeres de virtualización con Microsoft SCVMM e Hyper-V para el Centro de Excelencia (COE).",
+            "Estudio y capacitación avanzada en arquitecturas Cloud-Native (Red Hat Openshift, Kubernetes) e infraestructura cloud para telecomunicaciones con OpenStack.",
+            "Auditoría y análisis de causa raíz (RCA) de incidencias críticas en producción bajo metodología SRE sobre nodos de cómputo y volúmenes persistentes."
+        ],
+        "stack":["OpenShift", "OpenStack","SCVMM","Hyper-V","Kubernetes","GitOps","Linux"]
+    }
+]
