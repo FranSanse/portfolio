@@ -27,7 +27,7 @@
 
         const distanciaMaxima = Math.min(Math.floor(ancho*0.05+110),185);
         const distanciaMaximaCuadrado = distanciaMaxima * distanciaMaxima;
-        const numeroParticulas = Math.min(Math.floor(area/11000),180);
+        const numeroParticulas = Math.max(Math.min(Math.floor(area/11000),180),50);
 
         const resize = () => {
             canvas.height = window.innerHeight;
@@ -89,7 +89,7 @@
 
                     if (distanciaCuadrado < distanciaMaximaCuadrado){
                         const opacidad = (1 - (Math.sqrt(distanciaCuadrado)/distanciaMaxima));
-                        contexto.strokeStyle = `rgba(56, 189, 248, ${opacidad * 0.25})`;
+                        contexto.strokeStyle = `rgba(56, 189, 248, ${opacidad * 0.3})`;
                         contexto.lineWidth = 1;
                         contexto.beginPath();
                         contexto.moveTo(particulas[i].x,particulas[i].y);

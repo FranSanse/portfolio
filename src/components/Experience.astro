@@ -11,12 +11,12 @@ const esIngles = ruta.startsWith('/en');
 const t = useTranslations(ruta);
 
 interface Experiencia {
-    duracion: String,
-    rol: String,
-    empresa: String,
-    localizacion: String,
-    descripcion: String[],
-    stack: String[]
+    duracion: string,
+    rol: string,
+    empresa: string,
+    localizacion: string,
+    descripcion: string[],
+    stack: string[]
 }
 
 const experiencias :Experiencia[] = (esIngles ? enExp : esExp) as Experiencia[] ;
