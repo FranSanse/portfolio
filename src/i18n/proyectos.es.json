@@ -1,0 +1,53 @@
+[
+    {
+        "titulo":"S2 Orchestrator",
+        "subtitulo":"Plataforma web para la orquestación de redes SDN basadas en contenedores",
+        "imagen":"/images/proyectos/s2-orchestrator.png",
+        "descripcion":[
+            "Diseño y desarrollo de una plataforma full-stack para el despliegue y orquestación automatizada de topologías de red virtualizadas sobre Containerlab y Docker.",
+            "Implementación de persistencia híbrida (MySQL para gestión administrativa y archivos YAML declarativos como Fuente Única de Verdad - SSOT)",
+            "API asíncrona construida en FastAPI con streaming de telemetría y logs en tiempo real mediante WebSockets.",
+            "Interfaz gráfica reactiva en React y Tailwind CSS con autenticación OAuth 2.0 (Google Auth), visor topológico interactivo y monitorización de métricas en caliente."
+        ],
+        "stack": [
+            "Python",
+            "FastAPI",
+            "React",
+            "Tailwind CSS",
+            "Containerlab",
+            "Docker",
+            "MySQL",
+            "YAML",
+            "Linux"],
+        "links":{
+            "github":"https://github.com/FranSanse/S2Orchestrator",
+            "pdf":"/docs/MemoriaTFGFranciscoIvanSanSegundoAlvarez.pdf",
+            "playstore":null,
+            "demo":null
+
+        }
+    },
+    {
+        "titulo":"Sta. María la Real: Guía 360",
+        "subtitulo":"Aplicación móvil oficial para el Monasterio de Santa María la Real de Huelgas",
+        "imagen":"/images/proyectos/santa-maria-360.png",
+        "descripcion":[
+            "Desarrollo de una aplicación móvil nativa Android orientada a la divulgación patrimonial e inmersiva del monasterio de Valladolid.",
+            "Visita virtual inmersiva con visualización de panorámicas en 360°, mapa dinámico interactivo por sectores, galería multimedia y minijuegos didácticos.",
+            "Solicitud y reserva de visitas con acceso rápido a llamada directa y correo electrónico preconfigurado.",
+            "Arquitectura modular MVVM para desacoplar la lógica de negocio de la vista e integración en la nube con Firebase."
+        ],
+        "stack": [
+            "Kotlin",
+            "Firebase",
+            "Android",
+            "Jetpack Compose"
+        ],
+        "links":{
+            "github":"https://github.com/FranSanse/SMOV_Monasterio",
+            "pdf":"",
+            "playstore":"https://play.google.com/store/apps/details?id=com.nextapp.monasterio",
+            "demo":""
+        }
+    }
+]
