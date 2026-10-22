@@ -19,13 +19,25 @@
             "MySQL",
             "YAML",
             "Linux"],
-        "links":{
-            "github":"https://github.com/FranSanse/S2Orchestrator",
-            "pdf":"/docs/MemoriaTFGFranciscoIvanSanSegundoAlvarez.pdf",
-            "playstore":null,
-            "demo":null
-
-        }
+        "links":[
+            {
+                "label": "GitHub",
+                "url":"https://github.com/FranSanse/S2Orchestrator",
+                "icon":"mdi:github"
+            },{
+                "label": "Play Store",
+                "url":null,
+                "icon":"mdi:google-play"
+            },{
+                "label": "Demo",
+                "url":null,
+                "icon":"mdi:open-in-new"
+            },{
+                "label": "Documentación",
+                "url":"/docs/MemoriaTFGFranciscoIvanSanSegundoAlvarez.pdf",
+                "icon":"mdi:file-document-outline"
+            }
+        ]
     },
     {
         "titulo":"Sta. María la Real: Guía 360",
@@ -43,11 +55,24 @@
             "Android",
             "Jetpack Compose"
         ],
-        "links":{
-            "github":"https://github.com/FranSanse/SMOV_Monasterio",
-            "pdf":"",
-            "playstore":"https://play.google.com/store/apps/details?id=com.nextapp.monasterio",
-            "demo":""
-        }
+        "links":[
+            {
+                "label": "GitHub",
+                "url":"https://github.com/FranSanse/SMOV_Monasterio",
+                "icon":"mdi:github"
+            },{
+                "label": "Play Store",
+                "url":"https://play.google.com/store/apps/details?id=com.nextapp.monasterio",
+                "icon":"mdi:google-play"
+            },{
+                "label": "Demo",
+                "url":"/videos/demo-app.mp4",
+                "icon":"mdi:open-in-new"
+            },{
+                "label": "Documentación",
+                "url":null,
+                "icon":"mdi:file-document-outline"
+            }
+        ]
     }
 ]
